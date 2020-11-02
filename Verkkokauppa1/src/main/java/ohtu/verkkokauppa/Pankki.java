@@ -1,27 +1,10 @@
 package ohtu.verkkokauppa;
 
-public class Pankki {
+public interface Pankki {
 
-    private static Pankki instanssi;
+    static Pankki getInstance() {return getInstance(new PankkiImpl());}
 
-    public static Pankki getInstance() {
-        if (instanssi == null) {
-            instanssi = new Pankki();
-        }
+    static Pankki getInstance(Pankki pankki) {return pankki;}
 
-        return instanssi;
-    }
-    private Kirjanpito kirjanpito;
-
-    public Pankki() {
-        kirjanpito = Kirjanpito.getInstance();
-    }
-
-    public boolean tilisiirto(String nimi, int viitenumero, String tililta, String tilille, int summa) {
-        kirjanpito.lisaaTapahtuma("tilisiirto: tililtä " + tilille + " tilille " + tilille
-                + " viite " + viitenumero + " summa " + summa + "e");
-
-        // täällä olisi koodi joka ottaa yhteyden pankin verkkorajapintaan
-        return true;
-    }
+    boolean tilisiirto(String nimi, int viitenumero, String tililta, String tilille, int summa);
 }
