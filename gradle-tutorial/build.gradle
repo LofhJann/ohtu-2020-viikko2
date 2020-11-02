@@ -8,4 +8,8 @@ jar {
 	}
 }
 
+run {
+	standardInput = System.in
+}
+
 mainClassName = 'Main'
