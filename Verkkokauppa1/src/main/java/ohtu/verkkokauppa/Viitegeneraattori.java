@@ -1,6 +1,17 @@
 package ohtu.verkkokauppa;
 
-public interface Viitegeneraattori {
+import org.springframework.stereotype.Component;
 
-    int uusi();
+@Component
+public class Viitegeneraattori {
+
+    private int seuraava;
+    
+    public Viitegeneraattori(){
+        seuraava = 1;    
+    }
+    
+    public int uusi(){
+        return seuraava++;
+    }
 }

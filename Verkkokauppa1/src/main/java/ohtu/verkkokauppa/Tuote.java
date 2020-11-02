@@ -1,6 +1,7 @@
 
 package ohtu.verkkokauppa;
 
+
 public class Tuote {
     private int id;
     private String nimi;
@@ -12,7 +13,6 @@ public class Tuote {
         this.hinta = hinta;
     }
 
-    @Override
     public boolean equals(Object o) {
         Tuote t = (Tuote)o;
         
@@ -27,7 +27,6 @@ public class Tuote {
         return hinta;
     }
 
-    @Override
     public String toString() {
         return nimi;
     }            
