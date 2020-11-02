@@ -7,8 +7,8 @@ public class VarastoImpl implements Varasto {
     private Kirjanpito kirjanpito;
     private HashMap<Tuote, Integer> saldot;
     
-    public VarastoImpl() {
-        kirjanpito = Kirjanpito.getInstance();
+    public VarastoImpl(Kirjanpito kirjanpito) {
+        this.kirjanpito = kirjanpito;
         saldot = new HashMap<>();
         alustaTuotteet();
     }

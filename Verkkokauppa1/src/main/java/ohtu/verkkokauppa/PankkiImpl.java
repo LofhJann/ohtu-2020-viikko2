@@ -5,8 +5,8 @@ public class PankkiImpl implements Pankki {
 
     private Kirjanpito kirjanpito;
 
-    public PankkiImpl() {
-        kirjanpito = Kirjanpito.getInstance();
+    public PankkiImpl(Kirjanpito kirjanpito) {
+        this.kirjanpito = kirjanpito;
     }
 
     @Override
